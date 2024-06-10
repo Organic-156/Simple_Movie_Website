@@ -1,0 +1,148 @@
+body {
+    background: linear-gradient(181deg, rgb(1, 1, 32) 15%, rgb(54, 92, 141) 158.5%);
+    padding: 0px;
+    padding-top: 70px;
+    margin: 0px;
+}
+
+.text {
+    color: azure;
+    font-family: sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.navbar {
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    padding: 10px;
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+}
+
+.navbar a{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.navbar a:hover{
+    transition: 0.5s;
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+#result {
+    justify-content: center;
+    word-wrap: normal;
+    display: flex;
+    gap: 1em;
+    flex-wrap:  wrap;
+}
+
+.card {
+    width: 300px;
+    box-sizing: border-box;
+    position: relative;
+    color: aliceblue;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+}
+
+.picture img{
+    height: 400px;
+    width: 270px;
+    border-radius: 10px;
+}
+
+.picture img:hover {
+    transition: 0.4s;
+    transform: scale(1.1); 
+    filter: opacity(20%) blur(3px);
+}
+
+.card:hover .rating {
+    transition: 2s;
+    display: inline-block;
+} 
+
+.card:hover .genre {
+    transition: 2s;
+    display: inline-block;
+}
+
+.genre p:hover .picture img {
+    transition: 1s;
+    display: inline-block;
+    filter: opacity(20%) blur(3px)
+}
+
+.rating {
+    display: none;
+    font-weight: bolder;
+    font-size: 30px;
+    position: absolute;
+    top: 10%;
+    left: 45%;
+}
+
+.genre {
+    display: none;
+    margin: 0px;
+    width: 250px;
+    font-weight: bolder;
+    font-size: 20px;
+    top: 30%;
+    left: 7%;
+    position: absolute;
+    word-wrap: break-word;
+}
+
+.title p{
+    word-wrap: break-word;
+    font-size: 16px;
+}
+
+img {
+    --b: 10px;
+    /* the border thickness */
+    --d: 25px;
+    /* the distance from the edge */
+    --o: 25px;
+    /* the offset on hover */
+    --s: 1;
+    /* the direction of the hover effect (+1 or -1)*/
+
+    --_d: calc(var(--d) + var(--s)*1em);
+    --_g: calc(100% - 2*(var(--_d) + var(--b)));
+    --_m:
+        conic-gradient(from 90deg at var(--_d) var(--_d), #0000 25%, #000 0) 0 0/calc(100% - var(--_d)) calc(100% - var(--_d)),
+        linear-gradient(#000 0 0) 50%/var(--_g) var(--_g) no-repeat;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    font-size: 0;
+    cursor: pointer;
+    transition: .55s;
+}
+
+img:hover {
+    font-size: var(--o);
+}
+
+/* body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-auto-flow: column;
+    grid-gap: 25px;
+    background: repeating-linear-gradient(135deg, #A7DBD8 0 20px, #79BD9A 0 40px);
+} */
+
+/* Media screen at 520 pixels from big to small */
+@media screen and (max-width: 520px) {
+    .navbar {
+        display: hidden;
+    }
